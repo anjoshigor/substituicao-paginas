@@ -20,19 +20,26 @@ public class Main {
 	        
 	        while( (x = input.readLine()) != null ) {
 	        	  entriesList.add(new Entries(Integer.parseInt(x)));
-	          }
+	        	}
 	        } catch (IOException e) {
 	            e.getMessage();
 	      
 	        }
-	    /*
+	    
 	    findOccurences(entriesList);
-	    printList(entriesList);
+	    /*printList(entriesList);
 	    */
 	    
 	    Fifo fifoAlgo = new Fifo();
 	    fifoAlgo.simulate(entriesList, numberOfFrames);
+
+	    Otm otmAlgo = new Otm();
+	    otmAlgo.simulate(entriesList, numberOfFrames);
 	    
+	    Lru lruAlgo = new Lru();
+	    lruAlgo.simulate(entriesList, numberOfFrames);
+	    
+
 	}
 	
 	/**
